@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Animasi</title>
+  </head>
+  <body>
+    <h1>Buat Animation</h1>
+    <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla obcaecati dolor qui aut! Tempore beatae nam quaerat obcaecati veritatis! Accusamus ut cupiditate quisquam debitis? Libero aliquam ex ut aspernatur rem!</h3>
+
+    <script>
+      // default warna berhenti 5 detik
+      setTimeout(() => {
+        document.body.style.backgroundColor = "aqua";
+      }, 100);
+
+      // untuk ganti warna 2 detik sekali
+      var waktu = setInterval(() => {
+        console.log("update");
+        // cek warna h3
+        var h3 = document.getElementsByTagName("h3")[0];
+        var warna = h3.style.color;
+        // console.log(warna)
+        h3.style.color = warna == "red" ? "blue" : "red";
+      }, 400);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Sesi 6</title>
+    <style>
+      .kotak {
+        width: 25px;
+        height: 25px;
+        margin-left: 50px;
+      }
+      .merah {
+        background-color: red;
+      }
+      .hijau {
+        background-color: green;
+      }
+      .biru {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Muhammad Ramdhani Nugraha</h1>
+    <h2>Teks Animasi</h2>
+    <h5 class="teks">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla obcaecati dolor qui aut! Tempore beatae nam quaerat obcaecati veritatis! Accusamus ut cupiditate quisquam debitis? Libero aliquam ex ut aspernatur rem!
+    </h5>
+    <h5 class="teks">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla obcaecati dolor qui aut! Tempore beatae nam quaerat obcaecati veritatis! Accusamus ut cupiditate quisquam debitis? Libero aliquam ex ut aspernatur rem!
+    </h5>
+    <h5 class="teks">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla obcaecati dolor qui aut! Tempore beatae nam quaerat obcaecati veritatis! Accusamus ut cupiditate quisquam debitis? Libero aliquam ex ut aspernatur rem!
+    </h5>
+
+    <h1>Ubah Warna Background</h1>
+
+    <div class="kotak merah"></div>
+    <input type="range" name="sMerah" min="0" max="255" />
+
+    <div class="kotak hijau"></div>
+    <input type="range" name="sHijau" min="0" max="255" />
+
+    <div class="kotak biru"></div>
+    <input type="range" name="sBiru" min="0" max="255" />
+
+    <script>
+      // Teks kelap kelip
+      var kelap_kelip = document.getElementsByClassName("teks");
+      setInterval(function () {
+        kelap_kelip[0].style.color = "red";
+        kelap_kelip[1].style.color = "green";
+        kelap_kelip[2].style.color = "blue";
+
+        setTimeout(function () {
+          kelap_kelip[0].style.color = "black";
+          kelap_kelip[1].style.color = "black";
+          kelap_kelip[2].style.color = "black";
+        }, 500);
+      }, 1000);
+
+      //   Ubah Warna Background
+
+      const sMerah = document.querySelector("input[name=sMerah]");
+      const sHijau = document.querySelector("input[name=sHijau]");
+      const sBiru = document.querySelector("input[name=sBiru]");
+
+      sMerah.addEventListener("input", function () {
+        const r = sMerah.value;
+        const g = sHijau.value;
+        const b = sBiru.value;
+        document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+      });
+
+      sHijau.addEventListener("input", function () {
+        const r = sMerah.value;
+        const g = sHijau.value;
+        const b = sBiru.value;
+        document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+      });
+
+      sBiru.addEventListener("input", function () {
+        const r = sMerah.value;
+        const g = sHijau.value;
+        const b = sBiru.value;
+        document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+      });
+    </script>
+  </body>
+</html>
